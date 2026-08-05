@@ -1,5 +1,15 @@
 # Changelog
 
+## [5.9.3](https://github.com/agrc/atlas/compare/v5.9.2...v5.9.3) (2026-08-05)
+
+
+### Dependencies
+
+* bump NPM dependencies ([2e64a8a](https://github.com/agrc/atlas/commit/2e64a8a6f500fffdf28dc64514c2fb0f2ebf7c41))
+* bump Typescript to v6 ([2a30175](https://github.com/agrc/atlas/commit/2a30175b3517f8506389e10daeae3511b7dd5f58))
+* **dev:** bump the safe-dependencies group across 1 directory with 2 updates ([a29bcac](https://github.com/agrc/atlas/commit/a29bcac09085a11c85fa69329b136d0f781b259f))
+* **dev:** bump vite from 8.0.14 to 8.0.16 ([cc27ab5](https://github.com/agrc/atlas/commit/cc27ab528c1b7a57f3c9741a7fb3125be7509680))
+
 ## [5.9.2](https://github.com/agrc/atlas/compare/v5.9.1...v5.9.2) (2026-05-29)
 
 
