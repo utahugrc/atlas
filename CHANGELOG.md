@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.9.4](https://github.com/utahugrc/atlas/compare/v5.9.3...v5.9.4) (2026-10-01)
+
+
+### Dependencies
+
+* bump hono from 4.12.34 to 4.13.12 ([84ccba3](https://github.com/utahugrc/atlas/commit/84ccba3f57405b0eac6a3a07da4075053e3351e9))
+
 ## [5.9.3](https://github.com/agrc/atlas/compare/v5.9.2...v5.9.3) (2026-08-05)
 
 
