@@ -16,13 +16,19 @@ git clone https://github.com/agrc/atlas.git
 cd atlas
 ```
 
-Duplicate the `.env` file and rename it as `.env.local` to add your local secrets.
-
 Install the project dependencies
 
 ```bash
 pnpm install
 ```
+
+For local development, authenticate with Google Cloud:
+
+```bash
+gcloud auth application-default login
+```
+
+Secrets are automatically loaded from Google Secret Manager during local development.
 
 ### Step 2 - Develop and Test
 
