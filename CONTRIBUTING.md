@@ -1,6 +1,6 @@
 # How to contribute to atlas.utah.gov
 
-The `dev` branch is published to [atlas.dev.utah.gov](https://atlas.dev.utah.gov) and the `main` branch is published to [atlas.utah.gov](https://atlas.utah.gov).
+The `dev` branch is published to [atlas.test.utah.gov](https://atlas.test.utah.gov) and the `main` branch is published to [atlas.utah.gov](https://atlas.utah.gov).
 
 All code should be developed on feature branches and pull requests should be made to `dev`.
 

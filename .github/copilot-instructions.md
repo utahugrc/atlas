@@ -65,18 +65,16 @@ pnpm run build            # Production build
 
 ### Environment Variables
 
-Create `.env.local` (NOT committed):
-
-```env
-VITE_WEB_API=<api-key>           # UGRC Web API key
-VITE_DISCOVER=<quad-word>        # Discover service quad-word
-VITE_FIREBASE_CONFIG=<json>      # Firebase config JSON
-```
+Local development loads `VITE_WEB_API`, `VITE_DISCOVER`, and
+`VITE_FIREBASE_CONFIG` into memory from Google Secret Manager. Authenticate with
+`gcloud auth application-default login` and ensure the account has permission
+to access those secrets. Values already set in the process environment take
+precedence. Production builds never fetch secrets; CI must provide them.
 
 ### Branching & Releases
 
 - Feature branches → **dev** → **main**
-- `dev` deploys to [atlas.dev.utah.gov](https://atlas.dev.utah.gov)
+- `dev` deploys to [atlas.test.utah.gov](https://atlas.test.utah.gov)
 - `main` deploys to [atlas.utah.gov](https://atlas.utah.gov)
 
 ### Commit Message Format
