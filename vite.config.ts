@@ -2,15 +2,27 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import loadVersion from 'vite-plugin-package-version';
 import { defineConfig } from 'vitest/config';
+import googleSecrets from './scripts/vite-plugin-google-secrets';
 
 const arcgisCorePath = new URL('./node_modules/@arcgis/core', import.meta.url).pathname;
 
-// https://vitejs.dev/config/
 export default defineConfig({
   optimizeDeps: {
     include: ['firebase/analytics', 'firebase/app', 'firebase/performance'],
   },
-  plugins: [tailwindcss(), react(), loadVersion()],
+  plugins: [
+    googleSecrets({
+      projectId: 'ut-dts-ugrc-atlas-dev',
+      secrets: {
+        VITE_DISCOVER: 'VITE_DISCOVER',
+        VITE_WEB_API: 'VITE_WEB_API',
+        VITE_FIREBASE_CONFIG: 'VITE_FIREBASE_CONFIG',
+      },
+    }),
+    tailwindcss(),
+    react(),
+    loadVersion(),
+  ],
   resolve: {
     alias: [
       {
