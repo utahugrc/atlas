@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0-rc.1](https://github.com/utahugrc/atlas/compare/v5.9.4...v5.10.0-rc.1) (2026-10-22)
+
+
+### Features
+
+* add Dark and Outdoors basemaps ([40efc91](https://github.com/utahugrc/atlas/commit/40efc9127c408ee2fa01c2e3e3d0a79246a6591f))
+
 ## [5.9.4](https://github.com/utahugrc/atlas/compare/v5.9.3...v5.9.4) (2026-10-01)
 
 
