@@ -36,7 +36,7 @@
     "@react-types/shared": "^3.36.0",
     "@ugrc/esri-theme-toggle": "^2.0.0",
     "@ugrc/tailwind-preset": "^2.0.0",
-    "@ugrc/utah-design-system": "^4.0.3",
+    "@ugrc/utah-design-system": "^4.3.1",
     "@ugrc/utilities": "^5.0.0",
     "@utahdts/utah-design-system-header": "^5.2.0",
     "es-toolkit": "^1.50.0",
