@@ -36,8 +36,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0(tailwindcss@4.3.3)
       '@ugrc/utah-design-system':
-        specifier: ^4.0.3
-        version: 4.0.3(@arcgis/core@5.1.14)(@arcgis/map-components@5.1.14(@arcgis/core@5.1.14)(@esri/calcite-components@5.1.2))(@esri/calcite-components@5.1.2)(firebase@12.16.0)(react-aria-components@1.19.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
+        specifier: ^4.3.1
+        version: 4.3.1(@arcgis/core@5.1.14)(@arcgis/map-components@5.1.14(@arcgis/core@5.1.14)(@esri/calcite-components@5.1.2))(@esri/calcite-components@5.1.2)(@types/react@19.2.17)(firebase@12.16.0)(react-aria-components@1.19.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)
       '@ugrc/utilities':
         specifier: ^5.0.0
         version: 5.0.0(@arcgis/core@5.1.14)(react@19.2.8)
@@ -512,20 +512,20 @@ packages:
     resolution: {integrity: sha512-einEveDJ/k1180NOp78PB/4Hje9eBy3dyOGLLtLn6bSkizpUfCwuYBIXOA7Y3F/k/BsTQXgKqUVwQ0eiscWMdA==}
     engines: {node: '>=18.0.0'}
 
-  '@esri/arcgis-rest-fetch@4.10.2':
-    resolution: {integrity: sha512-v0+PxY5wkMulH27GxxM28KCMU73aHT9rNiIK9dBJq1PwmIzEZc+dKZkKJsLvY839oWydUwgsoOClqAlKzqZkig==}
+  '@esri/arcgis-rest-fetch@4.11.0':
+    resolution: {integrity: sha512-EcpT2EwFX5GmUwdzwQ3nfUz7M4Mo6z2fbWP3/5/tZefVz+TnWWgceudIiWy45AinuEHiJS5rCgOkNS7vmTabsA==}
 
-  '@esri/arcgis-rest-form-data@4.10.2':
-    resolution: {integrity: sha512-lyYDZP2vNOu6ueoEEebjOTz0JS9HLnWwqX4J/27O0OfIloEAyIXTZjUn2jyCpe+Mu1Q814tI9pULhaXvC2iMLw==}
+  '@esri/arcgis-rest-form-data@4.11.0':
+    resolution: {integrity: sha512-Gm9ojfnDjH3meBHZ077otEexnMJDJXkMnVqrycMWEqzNU/7saBgtHvfscF6xwQ8JZ+Jh0VeGQ7ECUQ3xNkIPcA==}
 
-  '@esri/arcgis-rest-geocoding@4.10.2':
-    resolution: {integrity: sha512-0Qo/TQfiurD7aOptMMZNv6f4Rg1i4GPDnRhC2RGNui34awY1xthou2knyOE5j4Ox9i2JXo6LQHnk3wod95+Q5w==}
+  '@esri/arcgis-rest-geocoding@4.11.0':
+    resolution: {integrity: sha512-bDPDa7ptloSOYjN59HCIYbaRMbMc6q1morCKGD5LDrCVG5y1gDfDbNIIH+PuKWstA71QlDWrSHRpvwA7klbm7A==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@esri/arcgis-rest-request': ^4.0.0
 
-  '@esri/arcgis-rest-request@4.10.2':
-    resolution: {integrity: sha512-EKJDKiXI5m1fcaFGx7NGOraiBjVHEBxaQ4PPa07OWhp8s8/xJCiJcYw7CAX9jTZgWPiXqh45zkIQ8e+EoMCwrw==}
+  '@esri/arcgis-rest-request@4.11.0':
+    resolution: {integrity: sha512-pK6Bz3EmB4WR2fatvTD8XsaWlyeuGGpXCU02xOJkIIk1qOiS0eDWwSSsFSzU7kjpSSsvf7WjrkoZdWDZOGxMZA==}
     engines: {node: '>=12.20.0'}
 
   '@esri/calcite-components@5.1.2':
@@ -1625,12 +1625,12 @@ packages:
   '@ugrc/tsconfigs@1.0.3':
     resolution: {integrity: sha512-9Z84bZpLJ6wRi4sm6RWvckPHs/Q6XZCHW5yjeHZzboZi/1bsJUOoh3F5wT/qQ5EKewDcHk65WcvUTWPc+JYjtQ==}
 
-  '@ugrc/utah-design-system@4.0.3':
-    resolution: {integrity: sha512-XOUax66BCwH4I4ejvRv7WhoTR/Xj0Gp+zGoCaPRDimCSxBcjffgThtjjqrrsckutGSKo3iFpA15UdIHEKYSiPA==}
+  '@ugrc/utah-design-system@4.3.1':
+    resolution: {integrity: sha512-dfK9eST349VAK6OltiEou/CQSi5YrIuLmR4Xn6Hse0wwIwagE51qmEJuUcwIiOOLIWkMF2Xlt/eiw1qMcrFhJg==}
     peerDependencies:
-      '@arcgis/core': '>=5.0.0'
-      '@arcgis/map-components': '>=5.0.0'
-      '@esri/calcite-components': '>=5.0.2'
+      '@arcgis/core': ^5.0.0
+      '@arcgis/map-components': ^5.0.0
+      '@esri/calcite-components': ^5.0.0
       firebase: '>=12.0.0'
       react: '>=19.0.0'
       react-aria: ^3.48.0
@@ -1642,6 +1642,12 @@ packages:
     resolution: {integrity: sha512-Kr37nC3TLQ45d0HVCcPj4ss6xYZkgqHoCj1YsaPKzGXzAkwpMVnIPrVKH+MWvkneFZRq1tWgvrTlTtROWrx+gg==}
     peerDependencies:
       '@arcgis/core': 5.x
+      react: '>=16.8.0'
+
+  '@ugrc/utilities@5.0.1':
+    resolution: {integrity: sha512-TV16TQrJ880hGBJLtCCcDX86qp8f0ezKM8DCkSa5AOD2iZK717udlIlUI81RePfWuyKOB+mv6uWz2RqYfsN85Q==}
+    peerDependencies:
+      '@arcgis/core': ^5.0.0
       react: '>=16.8.0'
 
   '@utahdts/utah-design-system-header@5.2.0':
@@ -3878,10 +3884,14 @@ packages:
     resolution: {integrity: sha512-XTFlOBHeuXnUGuUQI0kBb4O4oQW7qCV7MRGQja1xNpxgrI/jptlly+/5126RiRold1zgyxY520qOZUZ31V0I2A==}
     engines: {node: '>=20.0.0'}
 
-  lucide-react@1.16.0:
-    resolution: {integrity: sha512-dYwyPzb4MEKpGUmNYk3WKWPnMrHs3FKM+q94kAnJrcDIqqn1hq2xY8scaS2ovsOCM5D51ey2gaRG3PBb1vgoYQ==}
+  lucide-react@1.57.0:
+    resolution: {integrity: sha512-bXFZEucYhAzLD62Jse76AbTR6LiSLTn3Tqir2f1n8rZrWAdLodYy7jnRZSPIT89dRLk/IseMOUWG82wJtTyTTw==}
     peerDependencies:
+      '@types/react': '*'
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   luxon@3.7.2:
     resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
@@ -5007,14 +5017,16 @@ packages:
   tailwind-merge@3.6.0:
     resolution: {integrity: sha512-uxL7qAVQriqRQPAyK3pj66VqskWqoZ37PW94jwOTwNfq/z9oyu1V+eqrZqtR2+fCiXdYOZe/Modt8GtvqNzu+w==}
 
-  tailwind-variants@3.2.2:
-    resolution: {integrity: sha512-Mi4kHeMTLvKlM98XPnK+7HoBPmf4gygdFmqQPaDivc3DpYS6aIY6KiG/PgThrGvii5YZJqRsPz0aPyhoFzmZgg==}
-    engines: {node: '>=16.x', pnpm: '>=7.x'}
+  tailwind-variants@3.3.1:
+    resolution: {integrity: sha512-4pAvwUtM4HKBiRZftncAbpn6V9Hhwoa5Fl7O2u5zbp7Z5Cvu+/o/6+176WY3WCEES209543quG8zFIcXCsc5Jw==}
+    engines: {node: '>=16.9.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwind-merge: '>=3.0.0'
       tailwindcss: '*'
     peerDependenciesMeta:
       tailwind-merge:
+        optional: true
+      tailwindcss:
         optional: true
 
   tailwindcss-animate@1.0.7:
@@ -5932,25 +5944,25 @@ snapshots:
     dependencies:
       xss: 1.0.13
 
-  '@esri/arcgis-rest-fetch@4.10.2':
+  '@esri/arcgis-rest-fetch@4.11.0':
     dependencies:
       node-fetch: 3.3.2
 
-  '@esri/arcgis-rest-form-data@4.10.2':
+  '@esri/arcgis-rest-form-data@4.11.0':
     dependencies:
       formdata-node: 4.4.1
 
-  '@esri/arcgis-rest-geocoding@4.10.2(@esri/arcgis-rest-request@4.10.2)':
+  '@esri/arcgis-rest-geocoding@4.11.0(@esri/arcgis-rest-request@4.11.0)':
     dependencies:
-      '@esri/arcgis-rest-request': 4.10.2
+      '@esri/arcgis-rest-request': 4.11.0
       '@terraformer/arcgis': 2.1.2
       '@types/terraformer__arcgis': 2.0.5
       tslib: 2.8.1
 
-  '@esri/arcgis-rest-request@4.10.2':
+  '@esri/arcgis-rest-request@4.11.0':
     dependencies:
-      '@esri/arcgis-rest-fetch': 4.10.2
-      '@esri/arcgis-rest-form-data': 4.10.2
+      '@esri/arcgis-rest-fetch': 4.11.0
+      '@esri/arcgis-rest-form-data': 4.11.0
       mitt: 3.0.1
       tslib: 2.8.1
 
@@ -7192,31 +7204,38 @@ snapshots:
     dependencies:
       '@total-typescript/tsconfig': 1.0.4
 
-  '@ugrc/utah-design-system@4.0.3(@arcgis/core@5.1.14)(@arcgis/map-components@5.1.14(@arcgis/core@5.1.14)(@esri/calcite-components@5.1.2))(@esri/calcite-components@5.1.2)(firebase@12.16.0)(react-aria-components@1.19.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)':
+  '@ugrc/utah-design-system@4.3.1(@arcgis/core@5.1.14)(@arcgis/map-components@5.1.14(@arcgis/core@5.1.14)(@esri/calcite-components@5.1.2))(@esri/calcite-components@5.1.2)(@types/react@19.2.17)(firebase@12.16.0)(react-aria-components@1.19.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-aria@3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8))(react-dom@19.2.8(react@19.2.8))(react-stately@3.48.0(react@19.2.8))(react@19.2.8)(tailwindcss@4.3.3)':
     dependencies:
       '@arcgis/core': 5.1.14
       '@arcgis/map-components': 5.1.14(@arcgis/core@5.1.14)(@esri/calcite-components@5.1.2)
-      '@esri/arcgis-rest-geocoding': 4.10.2(@esri/arcgis-rest-request@4.10.2)
-      '@esri/arcgis-rest-request': 4.10.2
+      '@esri/arcgis-rest-geocoding': 4.11.0(@esri/arcgis-rest-request@4.11.0)
+      '@esri/arcgis-rest-request': 4.11.0
       '@esri/calcite-components': 5.1.2
       '@types/lodash-es': 4.17.12
-      '@ugrc/utilities': 5.0.0(@arcgis/core@5.1.14)(react@19.2.8)
+      '@ugrc/utilities': 5.0.1(@arcgis/core@5.1.14)(react@19.2.8)
       firebase: 12.16.0
       ky: 2.0.2
       lodash-es: 4.18.1
-      lucide-react: 1.16.0(react@19.2.8)
+      lucide-react: 1.57.0(@types/react@19.2.17)(react@19.2.8)
       react: 19.2.8
       react-aria: 3.50.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react-aria-components: 1.19.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       react-dom: 19.2.8(react@19.2.8)
       react-stately: 3.48.0(react@19.2.8)
       tailwind-merge: 3.6.0
-      tailwind-variants: 3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
+      tailwind-variants: 3.3.1(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
       ts-md5: 2.0.1
     transitivePeerDependencies:
+      - '@types/react'
       - tailwindcss
 
   '@ugrc/utilities@5.0.0(@arcgis/core@5.1.14)(react@19.2.8)':
+    dependencies:
+      '@arcgis/core': 5.1.14
+      ky: 2.0.2
+      react: 19.2.8
+
+  '@ugrc/utilities@5.0.1(@arcgis/core@5.1.14)(react@19.2.8)':
     dependencies:
       '@arcgis/core': 5.1.14
       ky: 2.0.2
@@ -9916,9 +9935,11 @@ snapshots:
 
   lsofi@2.0.0: {}
 
-  lucide-react@1.16.0(react@19.2.8):
+  lucide-react@1.57.0(@types/react@19.2.17)(react@19.2.8):
     dependencies:
       react: 19.2.8
+    optionalDependencies:
+      '@types/react': 19.2.17
 
   luxon@3.7.2: {}
 
@@ -11143,11 +11164,10 @@ snapshots:
 
   tailwind-merge@3.6.0: {}
 
-  tailwind-variants@3.2.2(tailwind-merge@3.6.0)(tailwindcss@4.3.3):
-    dependencies:
-      tailwindcss: 4.3.3
+  tailwind-variants@3.3.1(tailwind-merge@3.6.0)(tailwindcss@4.3.3):
     optionalDependencies:
       tailwind-merge: 3.6.0
+      tailwindcss: 4.3.3
 
   tailwindcss-animate@1.0.7(tailwindcss@4.3.3):
     dependencies:
