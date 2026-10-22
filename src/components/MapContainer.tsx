@@ -21,7 +21,7 @@ import { randomize } from './utils';
 const { item: randomExtent } = randomize<GraphicProperties>(cityExtents);
 
 const DEBOUNCE_TIME_MS = 200;
-const BASEMAPS = ['Lite', 'Hybrid', 'Terrain', 'Topo', 'Color IR', 'High Contrast'] as const;
+const BASEMAPS = ['Lite', 'Dark', 'Hybrid', 'Terrain', 'Outdoors', 'Topo', 'Color IR', 'High Contrast'] as const;
 
 type AtlasBasemap = (typeof BASEMAPS)[number];
 
