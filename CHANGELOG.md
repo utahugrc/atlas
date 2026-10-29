@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0-rc.2](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.1...v5.10.0-rc.2) (2026-10-29)
+
+
+### Bug Fixes
+
+* switch firebase config secret back to github ([af5eb1e](https://github.com/utahugrc/atlas/commit/af5eb1eb62d1c1b4395ff20cd5393ccc570b5a27))
+
 ## [5.10.0-rc.1](https://github.com/utahugrc/atlas/compare/v5.9.4...v5.10.0-rc.1) (2026-10-22)
 
 
