@@ -1,6 +1,6 @@
 {
   "name": "@ugrc/atlas",
-  "version": "5.10.0-rc.1",
+  "version": "5.10.0-rc.2",
   "private": true,
   "type": "module",
   "scripts": {
