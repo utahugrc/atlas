@@ -43,7 +43,8 @@ jobs:
           google-secrets-env-vars: |-
             VITE_DISCOVER=VITE_DISCOVER
             VITE_WEB_API=VITE_WEB_API
-            VITE_FIREBASE_CONFIG=VITE_FIREBASE_CONFIG
+        env:
+          VITE_FIREBASE_CONFIG: ${{ secrets.VITE_FIREBASE_CONFIG }}
 
   deploy-prod:
     name: Deploy to production
@@ -78,7 +79,8 @@ jobs:
           google-secrets-env-vars: |-
             VITE_DISCOVER=VITE_DISCOVER
             VITE_WEB_API=VITE_WEB_API
-            VITE_FIREBASE_CONFIG=VITE_FIREBASE_CONFIG
+        env:
+          VITE_FIREBASE_CONFIG: ${{ secrets.VITE_FIREBASE_CONFIG }}
 
   notify:
     name: Notifications
