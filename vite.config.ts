@@ -1,8 +1,8 @@
 import tailwindcss from '@tailwindcss/vite';
+import googleSecrets from '@ugrc/vite-plugin-google-secrets';
 import react from '@vitejs/plugin-react';
 import loadVersion from 'vite-plugin-package-version';
 import { defineConfig } from 'vitest/config';
-import googleSecrets from './scripts/vite-plugin-google-secrets';
 
 const arcgisCorePath = new URL('./node_modules/@arcgis/core', import.meta.url).pathname;
 
