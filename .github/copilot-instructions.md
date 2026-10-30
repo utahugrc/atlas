@@ -65,11 +65,12 @@ pnpm run build            # Production build
 
 ### Environment Variables
 
-Local development loads `VITE_WEB_API`, `VITE_DISCOVER`, and
-`VITE_FIREBASE_CONFIG` into memory from Google Secret Manager. Authenticate with
+The `@ugrc/vite-plugin-google-secrets` plugin loads `VITE_WEB_API`, `VITE_DISCOVER`,
+and `VITE_FIREBASE_CONFIG` into memory from Google Secret Manager on every Vite
+config run, including development, production, tests, and preview. Authenticate with
 `gcloud auth application-default login` and ensure the account has permission
-to access those secrets. Values already set in the process environment take
-precedence. Production builds never fetch secrets; CI must provide them.
+to access those secrets. Fetched values replace existing process environment
+values. Secret access failures stop startup or the build.
 
 ### Branching & Releases
 
