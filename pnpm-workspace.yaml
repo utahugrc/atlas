@@ -30,5 +30,8 @@ minimumReleaseAgeExclude:
   - baseline-browser-mapping@2.11.34
   - browserslist@4.29.5
   - electron-to-chromium@1.5.467
+  - '@vitest/mocker@5.0.5'
+  - '@vitest/spy@5.0.5'
+  - vitest@5.0.5
 overrides:
   'storybook@>=9.0.0 <9.1.17': '>=9.1.17'
