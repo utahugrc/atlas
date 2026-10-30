@@ -26,5 +26,8 @@ minimumReleaseAgeExclude:
   - fast-uri@3.1.3 || 3.1.4 || 3.1.5
   - re2@1.25.2
   - ip-address@10.2.1 || 10.2.2 || 10.3.1
+  - baseline-browser-mapping@2.11.34
+  - browserslist@4.29.5
+  - electron-to-chromium@1.5.467
 overrides:
   'storybook@>=9.0.0 <9.1.17': '>=9.1.17'
