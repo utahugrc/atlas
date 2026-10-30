@@ -34,7 +34,7 @@ jobs:
         uses: agrc/third-party-notice-composite-action@v1
 
       - name: 🚀 Deploy
-        uses: agrc/firebase-website-deploy-composite-action@dev
+        uses: agrc/firebase-website-deploy-composite-action@v2
         with:
           build-command: pnpm run build --mode dev
           identity-provider: ${{ secrets.IDENTITY_PROVIDER }}
