@@ -1,4 +1,4 @@
 {
   "extends": "@ugrc/tsconfigs/vite-config",
-  "include": ["vite.config.ts", "scripts/vite-plugin-google-secrets.ts"]
+  "include": ["vite.config.ts"]
 }

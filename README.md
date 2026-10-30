@@ -28,7 +28,11 @@ For local development, authenticate with Google Cloud:
 gcloud auth application-default login
 ```
 
-Secrets are automatically loaded from Google Secret Manager during local development.
+The `@ugrc/vite-plugin-google-secrets` plugin loads the configured secrets from Google
+Secret Manager whenever Vite loads its configuration, including development,
+production builds, tests, and preview. Fetched values replace existing environment
+values, and secret access failures stop startup or the build. CI also needs Google
+Cloud credentials with permission to access the configured secrets.
 
 ### Step 2 - Develop and Test
 
