@@ -60,7 +60,7 @@
     "@types/react-dom": "^19.2.3",
     "@ugrc/eslint-config": "^1.3.0",
     "@ugrc/tsconfigs": "^1.0.3",
-    "@ugrc/vite-plugin-google-secrets": "^1.1.0",
+    "@ugrc/vite-plugin-google-secrets": "^1.1.1",
     "@vitejs/plugin-react": "^6.0.4",
     "baseline-browser-mapping": "^2.11.7",
     "cpy-cli": "^7.0.0",
