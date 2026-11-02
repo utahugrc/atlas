@@ -12,7 +12,7 @@ export default defineConfig({
   },
   plugins: [
     googleSecrets({
-      projectId: 'ut-dts-ugrc-atlas-dev',
+      projectId: process.env.PROJECT_ID ?? 'ut-dts-ugrc-atlas-dev',
       secrets: {
         VITE_DISCOVER: 'VITE_DISCOVER',
         VITE_WEB_API: 'VITE_WEB_API',
