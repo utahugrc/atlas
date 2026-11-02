@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0-rc.4](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.3...v5.10.0-rc.4) (2026-11-02)
+
+
+### Bug Fixes
+
+* default to env var for project id ([8f0f4f4](https://github.com/utahugrc/atlas/commit/8f0f4f45184a7e2ecbd20b643d20d4326b0234af))
+
 ## [5.10.0-rc.3](https://github.com/utahugrc/atlas/compare/v5.9.4...v5.10.0-rc.3) (2026-10-30)
 
 
