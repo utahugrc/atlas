@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0-rc.7](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.6...v5.10.0-rc.7) (2026-11-03)
+
+
+### Bug Fixes
+
+* update LayerSelector Land Ownership source ([#637](https://github.com/utahugrc/atlas/issues/637)) ([1f198c1](https://github.com/utahugrc/atlas/commit/1f198c1f5823ff1ac4c8793705922ab82836ee95))
+
 ## [5.10.0-rc.6](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.5...v5.10.0-rc.6) (2026-11-03)
 
 
