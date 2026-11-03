@@ -45,6 +45,7 @@ jobs:
             VITE_WEB_API=VITE_WEB_API
         env:
           VITE_FIREBASE_CONFIG: ${{ secrets.VITE_FIREBASE_CONFIG }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
 
   deploy-prod:
     name: Deploy to production
@@ -81,6 +82,7 @@ jobs:
             VITE_WEB_API=VITE_WEB_API
         env:
           VITE_FIREBASE_CONFIG: ${{ secrets.VITE_FIREBASE_CONFIG }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
 
   notify:
     name: Notifications
