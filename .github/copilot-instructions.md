@@ -65,18 +65,17 @@ pnpm run build            # Production build
 
 ### Environment Variables
 
-Create `.env.local` (NOT committed):
-
-```env
-VITE_WEB_API=<api-key>           # UGRC Web API key
-VITE_DISCOVER=<quad-word>        # Discover service quad-word
-VITE_FIREBASE_CONFIG=<json>      # Firebase config JSON
-```
+The `@ugrc/vite-plugin-google-secrets` plugin loads `VITE_WEB_API`, `VITE_DISCOVER`,
+and `VITE_FIREBASE_CONFIG` into memory from Google Secret Manager on every Vite
+config run, including development, production, tests, and preview. Authenticate with
+`gcloud auth application-default login` and ensure the account has permission
+to access those secrets. Fetched values replace existing process environment
+values. Secret access failures stop startup or the build.
 
 ### Branching & Releases
 
 - Feature branches → **dev** → **main**
-- `dev` deploys to [atlas.dev.utah.gov](https://atlas.dev.utah.gov)
+- `dev` deploys to [atlas.test.utah.gov](https://atlas.test.utah.gov)
 - `main` deploys to [atlas.utah.gov](https://atlas.utah.gov)
 
 ### Commit Message Format
