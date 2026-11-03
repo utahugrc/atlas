@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0-rc.6](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.5...v5.10.0-rc.6) (2026-11-03)
+
+
+### Bug Fixes
+
+* don't overwrite env var during deploy ([d940272](https://github.com/utahugrc/atlas/commit/d9402728d0115f2604645826f7007df64eeabfae))
+
 ## [5.10.0-rc.5](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.4...v5.10.0-rc.5) (2026-11-03)
 
 
