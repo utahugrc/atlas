@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.10.0-rc.5](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.4...v5.10.0-rc.5) (2026-11-03)
+
+
+### Bug Fixes
+
+* set gcp project id for deploy jobs ([212083c](https://github.com/utahugrc/atlas/commit/212083c14b722301e321f9916d62e10f9c6051dd))
+
 ## [5.10.0-rc.4](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.3...v5.10.0-rc.4) (2026-11-02)
 
 
