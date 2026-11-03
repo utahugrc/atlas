@@ -1,5 +1,39 @@
 # Changelog
 
+## [5.10.0-rc.8](https://github.com/utahugrc/atlas/compare/v5.9.4...v5.10.0-rc.8) (2026-11-03)
+
+
+### Features
+
+* add Dark and Outdoors basemaps ([921da26](https://github.com/utahugrc/atlas/commit/921da26f90a461860e3352272ff50e65503a567d))
+* use shared Google secrets Vite plugin ([d079c12](https://github.com/utahugrc/atlas/commit/d079c123f18dabe37dcbd9032ee27e3910127839))
+
+
+### Bug Fixes
+
+* default to env var for project id ([8821a5c](https://github.com/utahugrc/atlas/commit/8821a5c38de31de71825dfda7068df245cd882d2))
+* don't overwrite env var during deploy ([c698883](https://github.com/utahugrc/atlas/commit/c6988831f42579982c716d68456c529105d76091))
+* set gcp project id for deploy jobs ([79fb23e](https://github.com/utahugrc/atlas/commit/79fb23e33a01d5fe59bf95de5f7cabcdb6211674))
+* switch firebase config secret back to github ([1f203a9](https://github.com/utahugrc/atlas/commit/1f203a94a060146a98da6df9284044f726dd7818))
+* update LayerSelector Land Ownership source ([#637](https://github.com/utahugrc/atlas/issues/637)) ([8365cab](https://github.com/utahugrc/atlas/commit/8365cab754b522379e480141ef1313dcbd7d5d1f))
+
+
+### Dependencies
+
+* bump @modelcontextprotocol/sdk from 1.29.0 to 1.32.2 ([#628](https://github.com/utahugrc/atlas/issues/628)) ([e3f1d7b](https://github.com/utahugrc/atlas/commit/e3f1d7b790da9e78efe6445fbb78c9227c415664))
+* bump browserslist from 4.28.2 to 4.29.5 ([#630](https://github.com/utahugrc/atlas/issues/630)) ([6c21fc0](https://github.com/utahugrc/atlas/commit/6c21fc0840e7c7c8602c3f604f01ac4b40c4bda9))
+* bump compression from 1.8.1 to 1.8.2 ([#622](https://github.com/utahugrc/atlas/issues/622)) ([9ece9b0](https://github.com/utahugrc/atlas/commit/9ece9b076adfa6fa9f89de9b63f5b33b2a45a5e8))
+* bump fast-uri from 3.1.5 to 3.1.9 ([#623](https://github.com/utahugrc/atlas/issues/623)) ([f1eec26](https://github.com/utahugrc/atlas/commit/f1eec2621e625e8bc613c032e266b76e2e2f8bb3))
+* bump ip-address from 10.3.1 to 10.7.5 ([#629](https://github.com/utahugrc/atlas/issues/629)) ([06694be](https://github.com/utahugrc/atlas/commit/06694be95596216c6f44a4396d8a55129bb3c90e))
+* bump js-yaml from 4.3.0 to 4.3.2 ([#607](https://github.com/utahugrc/atlas/issues/607)) ([f1b6c12](https://github.com/utahugrc/atlas/commit/f1b6c12ab005dca9ce592b3041a8f8b096aa92e0))
+* bump morgan from 1.11.0 to 1.12.1 ([#605](https://github.com/utahugrc/atlas/issues/605)) ([4c26e13](https://github.com/utahugrc/atlas/commit/4c26e1310ad69431bf9fd51d8e1cb74e96ae648e))
+* bump proxy-addr from 2.0.7 to 2.0.8 ([#618](https://github.com/utahugrc/atlas/issues/618)) ([14c12be](https://github.com/utahugrc/atlas/commit/14c12befebbddd4c0e4eee0d8aa2ddbb01791bfe))
+* bump source-map-js from 1.2.1 to 1.2.2 ([#620](https://github.com/utahugrc/atlas/issues/620)) ([e0719e5](https://github.com/utahugrc/atlas/commit/e0719e5a735b98d6fedc85988c8f1548abfd27da))
+* bump storybook from 9.1.20 to 9.1.21 ([#627](https://github.com/utahugrc/atlas/issues/627)) ([442f558](https://github.com/utahugrc/atlas/commit/442f5589472b6742985eb5ad8cc7f2cee6947756))
+* **dev:** bump happy-dom from 20.11.1 to 21.0.4 ([#631](https://github.com/utahugrc/atlas/issues/631)) ([a542635](https://github.com/utahugrc/atlas/commit/a54263552095b9fe1d72fb6ee4fa6e6a0788851b))
+* **dev:** bump vite from 8.1.5 to 8.1.6 ([#625](https://github.com/utahugrc/atlas/issues/625)) ([cff4852](https://github.com/utahugrc/atlas/commit/cff4852c811c135b9150c18b0e9e4dd9e8007c50))
+* **dev:** bump vitest from 4.1.10 to 5.0.5 ([#621](https://github.com/utahugrc/atlas/issues/621)) ([88e2aaa](https://github.com/utahugrc/atlas/commit/88e2aaaac94f810b1742d10bbc0994b3104daf45))
+
 ## [5.10.0-rc.7](https://github.com/utahugrc/atlas/compare/v5.10.0-rc.6...v5.10.0-rc.7) (2026-11-03)
 
 
