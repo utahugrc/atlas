@@ -6,6 +6,15 @@ import { defineConfig } from 'vitest/config';
 
 const arcgisCorePath = new URL('./node_modules/@arcgis/core', import.meta.url).pathname;
 
+const secrets: Record<string, string> = {
+  VITE_DISCOVER: 'VITE_DISCOVER',
+  VITE_WEB_API: 'VITE_WEB_API',
+};
+
+if (!process.env.VITE_FIREBASE_CONFIG) {
+  secrets.VITE_FIREBASE_CONFIG = 'VITE_FIREBASE_CONFIG';
+}
+
 export default defineConfig({
   optimizeDeps: {
     include: ['firebase/analytics', 'firebase/app', 'firebase/performance'],
@@ -13,11 +22,7 @@ export default defineConfig({
   plugins: [
     googleSecrets({
       projectId: process.env.PROJECT_ID ?? 'ut-dts-ugrc-atlas-dev',
-      secrets: {
-        VITE_DISCOVER: 'VITE_DISCOVER',
-        VITE_WEB_API: 'VITE_WEB_API',
-        VITE_FIREBASE_CONFIG: 'VITE_FIREBASE_CONFIG',
-      },
+      secrets,
     }),
     tailwindcss(),
     react(),
