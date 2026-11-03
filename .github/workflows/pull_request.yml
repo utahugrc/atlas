@@ -95,7 +95,9 @@ jobs:
           service-account-email: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
           project-id: ${{ secrets.PROJECT_ID }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          google-secrets-env-vars: |-
+            VITE_DISCOVER=VITE_DISCOVER
+            VITE_WEB_API=VITE_WEB_API
         env:
-          VITE_DISCOVER: ${{ secrets.VITE_DISCOVER }}
-          VITE_WEB_API: ${{ secrets.VITE_WEB_API }}
-          VITE_FIREBASE_CONFIG: ${{ secrets.FIREBASE_CONFIG }}
+          VITE_FIREBASE_CONFIG: ${{ secrets.VITE_FIREBASE_CONFIG }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
