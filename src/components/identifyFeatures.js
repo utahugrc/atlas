@@ -17,7 +17,9 @@ export const normalizeFlightMetadata = (data, dateFormatter) => {
     .sort((a, b) => a.date - b.date);
   const newest = dates[dates.length - 1];
 
-  return newest ? { ...newest, date: dateFormatter.format(newest.date) } : null;
+  return newest
+    ? { ...newest, date: dateFormatter.format(newest.date) }
+    : { date: 'unknown', resolution: 'A mystery' };
 };
 
 export const createPointFeatureQuery = (geometry, outFields) => ({

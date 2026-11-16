@@ -152,11 +152,7 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
             return;
           }
 
-          const flightMetadata = normalizeFlightMetadata(data, intl);
-
-          if (flightMetadata) {
-            setFlightDate(flightMetadata);
-          }
+          setFlightDate(normalizeFlightMetadata(data, intl));
         },
       ],
     ],

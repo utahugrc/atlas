@@ -47,6 +47,14 @@ describe('normalizeFlightMetadata', () => {
       ),
     ).toEqual({ date: 'formatted 1823673600000', resolution: '3 inch' });
   });
+
+  it.each([
+    ['missing', { resolution: '6 inch' }],
+    ['invalid', { date: 'not a date', resolution: '6 inch' }],
+    ['empty result', []],
+  ])('returns the unknown fallback for %s flight dates', (_description, data) => {
+    expect(normalizeFlightMetadata(data, dateFormatter)).toEqual({ date: 'unknown', resolution: 'A mystery' });
+  });
 });
 
 describe('queryPointFeatureLayer', () => {
