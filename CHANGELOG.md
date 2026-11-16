@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.9.6](https://github.com/utahugrc/atlas/compare/v5.9.5...v5.9.6) (2026-11-16)
+
+
+### Features
+
+* query identify features from services ([#644](https://github.com/utahugrc/atlas/issues/644)) ([35ea209](https://github.com/utahugrc/atlas/commit/35ea209823af4ac3faa6a494052193e4c1a64927))
+
+
+### Dependencies
+
+* bump hono from 4.13.12 to 4.13.18 ([#643](https://github.com/utahugrc/atlas/issues/643)) ([fd2605c](https://github.com/utahugrc/atlas/commit/fd2605c3fdd5d631ded9c496f0aed218a8c9b768))
+
 ## [5.9.5](https://github.com/utahugrc/atlas/compare/v5.9.4...v5.9.5) (2026-11-04)
 
 
