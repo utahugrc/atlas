@@ -1,34 +1,37 @@
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer.js';
 import { isLoaded, load, execute as project } from '@arcgis/core/geometry/operators/projectOperator.js';
 import { ExternalLink } from '@ugrc/utah-design-system/components/Link';
 import { toQueryString } from '@ugrc/utilities/url';
-import ky from 'ky';
 import startCase from 'lodash.startcase';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Text } from 'react-aria-components';
 import { fetchElevation } from './elevation';
+import { featureLayerFields, normalizeFlightMetadata, queryPointFeatureLayer } from './identifyFeatures';
 
-const featureClassNames = {
-  counties: 'boundaries.county_boundaries',
-  municipalities: 'boundaries.municipal_boundaries',
-  landOwnership: 'cadastre.land_ownership',
-  nationalGrid: 'indices.national_grid',
-  gnis: 'location.gnis_place_names',
-  zip: 'boundaries.zip_code_areas',
-  imageryDate: 'indices.hexagon_service_dates',
+const featureLayerUrls = {
+  counties:
+    'https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/UtahCountyBoundaries/FeatureServer/0',
+  municipalities:
+    'https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/UtahMunicipalBoundaries/FeatureServer/0',
+  landOwnership:
+    'https://gis.trustlands.utah.gov/mapping/rest/services/Land_Ownership_Agency_Web_Mercator/FeatureServer/0',
+  nationalGrid: 'https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/NationalGrid/FeatureServer/0',
+  zip: 'https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/UtahZipCodeAreas/FeatureServer/0',
+  imageryDate:
+    'https://services1.arcgis.com/99lidPhWCzftIe9K/arcgis/rest/services/Utah_Hexagon_Service_Dates/FeatureServer/0',
 };
 
 const fieldNames = {
   // counties & municipalities
   NAME: 'name',
-  // state
-  STATE_LGD: 'state_lgd',
+  // land ownership
+  STATE_SYM: 'st_sym',
   USNG: 'usng',
   ZIP5: 'zip5',
 };
 
 const urls = {
-  search: 'https://api.mapserv.utah.gov/api/v1/search',
   reverse: 'https://api.mapserv.utah.gov/api/v1/geocode/reverse',
   google: 'https://www.google.com/maps?q&layer=c&',
 };
@@ -67,11 +70,19 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
   const signal = useRef();
   const controller = useRef();
 
+  const featureLayers = useMemo(
+    () =>
+      Object.fromEntries(
+        Object.entries(featureLayerUrls).map(([name, url]) => [name, new FeatureLayer({ url })]),
+      ),
+    [],
+  );
+
   const requests = useMemo(
     () => [
       [
-        featureClassNames.counties,
-        fieldNames.NAME,
+        featureLayers.counties,
+        featureLayerFields.counties,
         (data) => {
           if (!data) {
             setCounty(outside);
@@ -82,8 +93,8 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
         },
       ],
       [
-        featureClassNames.municipalities,
-        fieldNames.NAME,
+        featureLayers.municipalities,
+        featureLayerFields.municipalities,
         (data) => {
           if (!data) {
             setCity('Unincorporated');
@@ -94,20 +105,20 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
         },
       ],
       [
-        featureClassNames.landOwnership,
-        fieldNames.STATE_LGD,
+        featureLayers.landOwnership,
+        featureLayerFields.landOwnership,
         (data) => {
           if (!data) {
             setOwnership(outside);
 
             return;
           }
-          setOwnership(data[fieldNames.STATE_LGD]);
+          setOwnership(data[fieldNames.STATE_SYM]);
         },
       ],
       [
-        featureClassNames.nationalGrid,
-        fieldNames.USNG,
+        featureLayers.nationalGrid,
+        featureLayerFields.nationalGrid,
         (data) => {
           if (!data) {
             setGrid(outside);
@@ -119,8 +130,8 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
         },
       ],
       [
-        featureClassNames.zip,
-        fieldNames.ZIP5,
+        featureLayers.zip,
+        featureLayerFields.zip,
         (data) => {
           if (!data) {
             setZip(outside);
@@ -132,8 +143,8 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
         },
       ],
       [
-        featureClassNames.imageryDate,
-        'date,resolution',
+        featureLayers.imageryDate,
+        featureLayerFields.imageryDate,
         (data) => {
           if (!data) {
             setFlightDate({ date: 'unknown', resolution: 'A mystery' });
@@ -141,26 +152,11 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
             return;
           }
 
-          if ((data?.date?.length ?? 0) > 0) {
-            data.date = intl.format(new Date(data['date']));
-
-            setFlightDate(data);
-          } else if ((data?.length ?? 0) > 0) {
-            const dates = data.map((result) => {
-              return { date: new Date(result.attributes['date']), resolution: result.attributes['resolution'] };
-            });
-            const sorted = dates.sort((a, b) => {
-              return a.date - b.date;
-            });
-
-            const newest = sorted[sorted.length - 1];
-            newest.date = intl.format(newest.date);
-            setFlightDate(newest);
-          }
+          setFlightDate(normalizeFlightMetadata(data, intl));
         },
       ],
     ],
-    [],
+    [featureLayers],
   );
 
   const reverseGeocode = useCallback(
@@ -219,20 +215,14 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
   const get = useCallback(
     async (requestMetadata, mapPoint, requestSignal) => {
       await Promise.all(
-        requestMetadata.map(async (item) => {
-          const url = `${urls.search}/${item[0]}/${item[1]}?`;
-          const query = toQueryString({
-            geometry: `point: ${JSON.stringify(mapPoint.toJSON())}`,
-            attributeStyle: 'lower',
-            apiKey: apiKey,
-            spatialReference: wkid,
-          });
-
+        requestMetadata.map(async ([layer, outFields, onResult]) => {
           try {
-            const response = await ky.get(url + query, { signal: requestSignal, mode: 'cors' });
-            let result = await response.json();
-            result = result.result;
-
+            const result = await queryPointFeatureLayer({
+              layer,
+              geometry: mapPoint,
+              outFields,
+              signal: requestSignal,
+            });
             let data;
 
             if (result.length === 1) {
@@ -240,11 +230,11 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
             }
 
             if (result.length > 1) {
-              console.warn('more than one result found', url);
+              console.warn('more than one result found', layer.url);
               data = result;
             }
 
-            item[2](data);
+            onResult(data);
           } catch (error) {
             if (error.name === 'AbortError') {
               return;
@@ -257,7 +247,7 @@ export const IdentifyInformation = ({ apiKey, wkid = 3857, location }) => {
 
       await reverseGeocode(mapPoint, requestSignal);
     },
-    [apiKey, wkid, reverseGeocode],
+    [reverseGeocode],
   );
 
   useEffect(() => {
